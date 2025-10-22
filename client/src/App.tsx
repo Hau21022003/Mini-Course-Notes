@@ -11,6 +11,7 @@ import CoursesPage from "@/pages/admin/courses/page";
 import LogoutPage from "@/pages/auth/logout/page";
 import NotesPage from "@/pages/admin/notes/page";
 import ShareNotePage from "@/pages/share-note/page";
+import HomePage from "@/pages/home";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="courses" element={<CoursesPage />} />
           <Route path="/admin/:courseId/notes" element={<NotesPage />} />
         </Route>
+
+        <Route path="/" element={<HomePage />} />
         <Route path="/share-note/:shareToken" element={<ShareNotePage />} />
 
         <Route path="/login" element={<LoginPage />} />

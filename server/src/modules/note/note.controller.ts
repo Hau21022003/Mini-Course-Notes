@@ -12,6 +12,7 @@ import { CreateNoteDto } from './dto/create-note.dto';
 import { UpdateNoteDto } from './dto/update-note.dto';
 import { GetUser } from 'src/common/decorators/get-user.decorator';
 import { FindAllDto } from 'src/modules/note/dto/find-all.dto';
+import { Public } from 'src/auth/decorators/public.decorator';
 
 @Controller('note')
 export class NoteController {
@@ -27,6 +28,7 @@ export class NoteController {
     return this.noteService.findAll(findAllDto, userId);
   }
 
+  @Public()
   @Get(`:shareToken/share`)
   findOnePublic(@Param('shareToken') shareToken: string) {
     return this.noteService.findOnePublic(shareToken);
